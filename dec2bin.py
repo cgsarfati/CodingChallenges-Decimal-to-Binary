@@ -1,23 +1,6 @@
 """Convert a decimal number to binary representation.
 
-For example::
-
-    >>> dec2bin_backwards(0)
-    '0'
-
-    >>> dec2bin_backwards(1)
-    '1'
-
-    >>> dec2bin_backwards(2)
-    '10'
-
-    >>> dec2bin_backwards(4)
-    '100'
-
-    >>> dec2bin_backwards(15)
-    '1111'
-
-For example, using our alternate solution::
+For example, using our solution::
 
     >>> dec2bin_forwards(0)
     '0'
@@ -38,32 +21,13 @@ For example, using our alternate solution::
 
 # HOW TO CONVERT: keep dividing by two until quotient is 1. Within
 # each divide, remainder (always either 0 or 1) is the binary # to be added.
-
-
-def dec2bin_backwards(num):
-    """Convert a decimal number to binary representation."""
-
-    binary_num = str(bin(num))
-
-    binary_lst = []
-
-    for char in binary_num:
-        binary_lst.append(char)
-
-    result = []
-
-    for i, char in enumerate(binary_num):
-        if char == 'b':
-            result.append(binary_num[i + 1:])
-
-    result = "".join(result)
-
-    return result
+# result should be last append to first append
 
 
 def dec2bin_forwards(num):
     """Convert a decimal number to binary representation."""
 
+    # convert num to binary, then convert into lst
     binary_num = str(bin(num))
 
     binary_lst = []
@@ -73,6 +37,7 @@ def dec2bin_forwards(num):
 
     result = []
 
+    # create new lst of binary digits after 'b' appears
     for i, char in enumerate(binary_num):
         if char == 'b':
             result.append(binary_num[i + 1:])
