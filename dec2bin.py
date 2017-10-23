@@ -36,12 +36,50 @@ For example, using our alternate solution::
 
 """
 
+# HOW TO CONVERT: keep dividing by two until quotient is 1. Within
+# each divide, remainder (always either 0 or 1) is the binary # to be added.
 
-def dec2bin(num):
+
+def dec2bin_backwards(num):
     """Convert a decimal number to binary representation."""
 
-    # HOW TO CONVERT: keep dividing by two until quotient is 1. Within
-    # each divide, remainder (always either 0 or 1) is the binary # to be added.
+    binary_num = str(bin(num))
+
+    binary_lst = []
+
+    for char in binary_num:
+        binary_lst.append(char)
+
+    result = []
+
+    for i, char in enumerate(binary_num):
+        if char == 'b':
+            result.append(binary_num[i + 1:])
+
+    result = "".join(result)
+
+    return result
+
+
+def dec2bin_forwards(num):
+    """Convert a decimal number to binary representation."""
+
+    binary_num = str(bin(num))
+
+    binary_lst = []
+
+    for char in binary_num:
+        binary_lst.append(char)
+
+    result = []
+
+    for i, char in enumerate(binary_num):
+        if char == 'b':
+            result.append(binary_num[i + 1:])
+
+    result = "".join(result)
+
+    return result
 
 if __name__ == '__main__':
     import doctest
