@@ -40,7 +40,8 @@ For example, using our alternate solution::
 def dec2bin(num):
     """Convert a decimal number to binary representation."""
 
-
+    # HOW TO CONVERT: keep dividing by two until quotient is 1. Within
+    # each divide, remainder (always either 0 or 1) is the binary # to be added.
 
 if __name__ == '__main__':
     import doctest
